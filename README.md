@@ -1,7 +1,5 @@
 # baselibrary/python [![Docker Repository on Quay.io](https://quay.io/repository/baselibrary/python/status "Docker Repository on Quay.io")](https://quay.io/repository/baselibrary/python)
 
-[![](http://dockeri.co/image/baselibrary/python)](https://registry.hub.docker.com/u/baselibrary/python/)
-
 ## Installation and Usage
 
     docker pull quay.io/baselibrary/python:${VERSION:-latest}
