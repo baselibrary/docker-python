@@ -1,3 +1,2 @@
-ThoughtWorks Docker-Python
+ThoughtWorks Python Docker Image
 ===================
-[![Docker Repository on Quay.io](https://quay.io/repository/baselibrary/python/status "Docker Repository on Quay.io")]
