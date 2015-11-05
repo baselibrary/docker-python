@@ -1,9 +1,9 @@
-FROM baselibrary/ubuntu:14.04
+FROM baselibrary/baseimage:1.0.0
 MAINTAINER ShawnMa <qsma@thoughtworks.com>
 
 ## Version
-ENV PYTHON_MAJOR 3.4
-ENV PYTHON_VERSION 3.4.0-2ubuntu1
+ENV MAJOR   3.4
+ENV VERSION 3.4.0-2ubuntu1
 
 ## Repository
 RUN \
@@ -12,8 +12,8 @@ RUN \
 
 ## Packages
 RUN \
-  apt-get update && \
-  apt-get install -y python3.4=$PYTHON_VERSION python$PYTHON_MAJOR-dev python-pip &&\
+  apt-get update &&\
+  apt-get install -y python3.4=$VERSION python3.4-dev python-pip &&\
   rm -rf /var/lib/apt/lists/*
 
 ## Additional

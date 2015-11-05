@@ -24,9 +24,9 @@ for version in "${versions[@]}"; do
 	(
 		set -x
 		sed '
-			s/%%PYTHON_MAJOR%%/'"$version"'/g;
-			s/%%PYTHON_VERSION%%/'"$fullVersion"'/g;
-			s!%%PYTHON_PACKAGE%%!'"$package"'!g;
+			s/%%MAJOR%%/'"$version"'/g;
+			s/%%VERSION%%/'"$fullVersion"'/g;
+			s!%%PACKAGE%%!'"$package"'!g;
 		' Dockerfile.template > "$version/Dockerfile"
 	)
 done
