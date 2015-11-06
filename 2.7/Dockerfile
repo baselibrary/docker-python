@@ -2,8 +2,8 @@ FROM baselibrary/baseimage:1.0.0
 MAINTAINER ShawnMa <qsma@thoughtworks.com>
 
 ## Version
-ENV MAJOR   2.7
-ENV VERSION 2.7.5-5ubuntu3
+ENV PYTHON_MAJOR   2.7
+ENV PYTHON_VERSION 2.7.5-5ubuntu3
 
 ## Repository
 RUN \
@@ -13,7 +13,7 @@ RUN \
 ## Packages
 RUN \
   apt-get update &&\
-  apt-get install -y python=$VERSION python2.7-dev python-pip &&\
+  apt-get install -y python=$PYTHON_VERSION python2.7-dev python-pip &&\
   rm -rf /var/lib/apt/lists/*
 
 ## Additional

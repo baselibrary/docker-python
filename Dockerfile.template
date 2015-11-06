@@ -2,8 +2,8 @@ FROM baselibrary/baseimage:1.0.0
 MAINTAINER ShawnMa <qsma@thoughtworks.com>
 
 ## Version
-ENV MAJOR   %%MAJOR%%
-ENV VERSION %%VERSION%%
+ENV PYTHON_MAJOR   %%PYTHON_MAJOR%%
+ENV PYTHON_VERSION %%PYTHON_VERSION%%
 
 ## Repository
 RUN \
@@ -13,7 +13,7 @@ RUN \
 ## Packages
 RUN \
   apt-get update &&\
-  apt-get install -y %%PACKAGE%%=$VERSION python%%MAJOR%%-dev python-pip &&\
+  apt-get install -y %%PYTHON_PACKAGE%%=$PYTHON_VERSION python%%PYTHON_MAJOR%%-dev python-pip &&\
   rm -rf /var/lib/apt/lists/*
 
 ## Additional
