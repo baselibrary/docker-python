@@ -19,3 +19,11 @@
 ### Usage
 
     docker run -it --rm baselibrary/python
+
+    `
+    FROM python:3.4
+
+    RUN \
+      pip install ...
+
+    `
