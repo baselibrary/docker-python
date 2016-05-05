@@ -1,6 +1,6 @@
 NAME     = baselibrary/python
 REPO     = git@github.com:baselibrary/docker-python.git
-REGISTRY = thoughtworks.io
+REGISTRY = thoughtworks.ga
 VERSIONS = $(foreach df,$(wildcard */Dockerfile),$(df:%/Dockerfile=%))
 
 all: build 
