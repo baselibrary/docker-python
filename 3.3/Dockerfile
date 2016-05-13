@@ -20,3 +20,6 @@ RUN \
 RUN \
   pip install --upgrade pip
 
+## Environments
+ENV PYTHONIOENCODING UTF-8
+
