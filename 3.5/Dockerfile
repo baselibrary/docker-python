@@ -3,7 +3,7 @@ MAINTAINER ShawnMa <qsma@thoughtworks.com>
 
 ## Version
 ENV PYTHON_MAJOR   3.5
-ENV PYTHON_VERSION 3.5.1-1+trusty1
+ENV PYTHON_VERSION 3.5.2-1~trusty1
 
 ## Repository
 RUN \
