@@ -2,8 +2,8 @@ FROM baselibrary/baseimage:2.0.0
 MAINTAINER ShawnMa <qsma@thoughtworks.com>
 
 ## Version
-ENV PYTHON_MAJOR   3.1
-ENV PYTHON_VERSION 3.1.5-7+xenial1
+ENV PYTHON_MAJOR   3.6
+ENV PYTHON_VERSION 3.6.1-1+xenial1
 
 ## Repository
 RUN \
@@ -13,7 +13,7 @@ RUN \
 ## Packages
 RUN \
   apt-get update &&\
-  apt-get install -y python3.1=$PYTHON_VERSION python3.1-dev python-pip &&\
+  apt-get install -y python3.6=$PYTHON_VERSION python3.6-dev python-pip &&\
   rm -rf /var/lib/apt/lists/*
 
 ## Additional

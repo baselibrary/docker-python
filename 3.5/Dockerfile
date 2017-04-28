@@ -1,14 +1,14 @@
-FROM baselibrary/baseimage:1.0.0
+FROM baselibrary/baseimage:2.0.0
 MAINTAINER ShawnMa <qsma@thoughtworks.com>
 
 ## Version
 ENV PYTHON_MAJOR   3.5
-ENV PYTHON_VERSION 3.5.2-1~trusty1
+ENV PYTHON_VERSION 3.5.1-10
 
 ## Repository
 RUN \
   apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DB82666C &&\
-  echo "deb http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu trusty main" > /etc/apt/sources.list.d/python.list
+  echo "deb http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu xenial main" > /etc/apt/sources.list.d/python.list
 
 ## Packages
 RUN \
@@ -22,4 +22,3 @@ RUN \
 
 ## Environments
 ENV PYTHONIOENCODING UTF-8
-

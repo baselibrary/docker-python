@@ -10,16 +10,16 @@ fi
 versions=( "${versions[@]%/}" )
 
 
-for version in "${versions[@]}"; do	
+for version in "${versions[@]}"; do
   if [ $version == "2.7" ]; then
   	fullPackage="python"
-    fullVersion="$(curl -fsSL "http://archive.ubuntu.com/ubuntu/dists/trusty/main/binary-amd64/Packages.gz"                  | gunzip | awk -v pkgname=$fullPackage -F ': ' '$1 == "Package" { pkg = $2 } pkg == pkgname && $1 == "Version" { print $2 }' | sort -rV | head -n1 )"
-  elif [ $version == "3.4" ]; then
-  	fullPackage="python3.4"
-  	fullVersion="$(curl -fsSL "http://archive.ubuntu.com/ubuntu/dists/trusty/main/binary-amd64/Packages.gz"                  | gunzip | awk -v pkgname=$fullPackage -F ': ' '$1 == "Package" { pkg = $2 } pkg == pkgname && $1 == "Version" { print $2 }' | sort -rV | head -n1 )"
+    fullVersion="$(curl -fsSL "http://archive.ubuntu.com/ubuntu/dists/xenial/main/binary-amd64/Packages.gz"                  | gunzip | awk -v pkgname=$fullPackage -F ': ' '$1 == "Package" { pkg = $2 } pkg == pkgname && $1 == "Version" { print $2 }' | sort -rV | head -n1 )"
+  elif [ $version == "3.5" ]; then
+  	fullPackage="python3.5"
+  	fullVersion="$(curl -fsSL "http://archive.ubuntu.com/ubuntu/dists/xenial/main/binary-amd64/Packages.gz"                  | gunzip | awk -v pkgname=$fullPackage -F ': ' '$1 == "Package" { pkg = $2 } pkg == pkgname && $1 == "Version" { print $2 }' | sort -rV | head -n1 )"
   else
   	fullPackage="python${version}"
-    fullVersion="$(curl -fsSL "http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu/dists/trusty/main/binary-amd64/Packages.gz" | gunzip | awk -v pkgname=$fullPackage -F ': ' '$1 == "Package" { pkg = $2 } pkg == pkgname && $1 == "Version" { print $2 }' | sort -rV | head -n1 )"
+    fullVersion="$(curl -fsSL "http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu/dists/xenial/main/binary-amd64/Packages.gz" | gunzip | awk -v pkgname=$fullPackage -F ': ' '$1 == "Package" { pkg = $2 } pkg == pkgname && $1 == "Version" { print $2 }' | sort -rV | head -n1 )"
 	fi
 	(
 		set -x
@@ -30,4 +30,3 @@ for version in "${versions[@]}"; do
 		' Dockerfile.template > "$version/Dockerfile"
 	)
 done
-
