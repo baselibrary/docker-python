@@ -3,7 +3,7 @@ MAINTAINER ShawnMa <qsma@thoughtworks.com>
 
 ## Version
 ENV PYTHON_MAJOR   3.6
-ENV PYTHON_VERSION 3.6.1-1+xenial1
+ENV PYTHON_VERSION 3.6.2-1+xenial1
 
 ## Repository
 RUN \
